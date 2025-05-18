@@ -47,11 +47,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: kdmapper-exe
-        path: kdmapper\x64\Release\kdmapper_Release.exe
+        path: x64\Release\kdmapper_Release.exe
 
     - name: Upload library
       if: matrix.build_configuration == 'lib-Release'
       uses: actions/upload-artifact@v4
       with:
         name: kdmapper-lib
-        path: kdmapper\x64\lib\kdmapper_lib-Release.lib
+        path: x64\lib\kdmapper_lib-Release.lib
