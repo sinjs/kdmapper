@@ -261,7 +261,7 @@ bool intel_driver::ClearWdFilterDriverList(HANDLE device_handle) {
 		48 8B 0D FC AA FA FF          mov     rcx, cs:qword_1C0021BF0
 		E9 21 FF FF FF                jmp     loc_1C007701A
 	*/
-	auto MpFreeDriverInfoExRef = FindPatternInSectionAtKernel(device_handle, "PAGE", WdFilter, (PUCHAR)"\x49\x8B\xC9\x00\x89\x00\x08\xE8\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xE9", "xxx?x?xx???????????x");
+	auto MpFreeDriverInfoExRef = FindPatternInSectionAtKernel(device_handle, "PAGE", WdFilter, (PUCHAR)"\x49\x8B\x00\x00\x89\x00\x08\xE8\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xE9", "xx??x?xx???????????x");
 	if (!MpFreeDriverInfoExRef) {
 		// 24010 
 		/*
